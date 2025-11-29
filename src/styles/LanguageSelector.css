@@ -1,0 +1,109 @@
+.language-selector {
+  position: relative;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 2px solid var(--primary-light);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+}
+
+.lang-toggle:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+.globe-icon {
+  font-size: 1.2rem;
+}
+
+.current-lang {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 200px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(34, 197, 94, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--primary-light);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.language-selector:hover .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.lang-option:last-child {
+  border-bottom: none;
+}
+
+.lang-option:hover {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  padding-left: 1.25rem;
+}
+
+.lang-option.active {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #dcfce7 100%);
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+
+.lang-flag {
+  font-size: 1.3rem;
+}
+
+.check-mark {
+  margin-left: auto;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .lang-dropdown {
+    right: auto;
+    left: 0;
+  }
+}
